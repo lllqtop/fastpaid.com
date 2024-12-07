@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  color: white
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: #fff
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #298C21
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2);
+  background-color: #fff
+}
+
+#lang_btn {
+  color: white;
+  background: transparent;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn_green{
+  margin-top: 27px;
+  padding: 12px 0;
+  display: block;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: .02em;
+  background: var(--green);
+  border-radius: 5px;
+  -webkit-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+}
+
+.btn_green:hover {
+  color: #fff;
+  opacity: .7
+}
+
+input {
+  background: #1E1E20;
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 18px
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0
+}
+
+.dropdown {
+  position: relative;
+  background: #1E1E20;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px
+}
+
+.dropdown .label {
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px
+}
+
+.dropdown .container {
+  position: absolute;
+  background: #1E1E20;
+  width: 100%;
+  top: 50px;
+  border-radius: 0 0 10px 10px;
+  overflow-y: scroll;
+  transition: height 200ms;
+  height: 0
+}
+
+.dropdown .container>* {
+  margin: 0 20px;
+  margin-top: 10px;
+  width: calc(100% - 40px)
+}
+
+.dropdown .container>*:hover {
+  background: #3e3e42;
+  border-radius: 10px
+}
+
+.dropdown .container>*:last-child {
+  margin-bottom: 20px
+}
+
+.dropdown.active .container {
+  height: 300px
+}
+
+.dropdown .label img {
+  transition: 200ms
+}
+
+.dropdown.active .label img {
+  transform: scaleY(-1)
+}
+
+.dropdown:not(.active) .container::-webkit-scrollbar {
+  display: none
+}
+
+.dropdown.active .container::-webkit-scrollbar {
+  width: 5px
+}
+
+.dropdown.active .container::-webkit-scrollbar-track {
+  background: transparent
+}
+
+.dropdown.active .container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 9999px
+}
+
+.origin_btn {
+  text-align: center;
+  padding: 12px 24px;
+  background: var(--green);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer
+}
+
+.origin_btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+p.label {
+  width: fit-content;
+  color: #298C21;
+  padding: 8px 19px;
+  font-size: 19px;
+  font-weight: bold;
+  border: 2px solid #298C21;
+  background: #288c2185;
+  border-radius: 999px
+}
+
+@media (max-width:768px) {
+  .origin_btn, p.label {
+    font-size: 14px
+  }
+}
+
+.live_circle::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../images/pusle.svg);
+  background-size: contain;
+  margin-left: 10px;
+  animation: pulse 1s alternate infinite
+}
+
+@keyframes pulse {
+  to {
+    opacity: .5
+  }
+}

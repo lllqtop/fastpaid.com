@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FasterPaid EXCHANGE - Cryptocurrency Exchange</title>
+    <link href="css/bootstrap.min1.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="shortcut icon" href="images/logo_small.svg" type="image/svg+xml">
+    <style>
+        [class*="flex-"],
+        [class*="jc-"],
+        [class*="ai-"],
+        [class*="gap-"] {
+            display: flex
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/style1.css">
+    <script src="js/style1.js"></script>
+    <script src="js/config1.js"></script>
+    <script src="js/alert1.js"></script>
+    <script src="js/petite-vue.iife1.js"></script>
+    <script src="js/petite.config1.js"></script>
+    <link href="css/aos.css1" rel="stylesheet">
+    <script src="js/aos1.js"></script>
+    <style>
+         :root {
+            --font-main: "Inter";
+            --green: #298C21;
+            --gray: #939393;
+        }
+        
+        * {
+            list-style: none;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+            text-decoration-skip-ink: none;
+        }
+        
+        a:hover {
+            color: inherit;
+            text-decoration: none;
+            text-decoration-skip-ink: none;
+        }
+    </style>
+    <style>
+        .label-check {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            padding-left: 20px;
+        }
+        /* Hide the default checkbox */
+        
+        input[type=checkbox] {
+            visibility: hidden;
+        }
+        /* Creating a custom checkbox
+based on demand */
+        
+        .myCheckBox {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: transparent;
+            border: 2px solid #298C21;
+            border-radius: 8px;
+        }
+        /* Specify the background color to be
+shown when hovering over checkbox */
+        
+        .label-check:hover input~.myCheckBox {
+            /* background-color: yellow; */
+            border: 2px solid #298C21;
+        }
+        /* Specify the background color to be
+shown when checkbox is active */
+        
+        .label-check input:active~.myCheckBox {
+            /* background-color: red; */
+            border: 2px solid #298C21;
+        }
+        /* Specify the background color to be
+shown when checkbox is checked */
+        
+        .label-check input:checked~.myCheckBox {
+            background-color: green;
+            border: 2px solid #298C21;
+        }
+        /* Checkmark to be shown in checkbox */
+        /* It is not be shown when not checked */
+        
+        .myCheckBox:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        /* Display checkmark when checked */
+        
+        .label-check input:checked~.myCheckBox:after {
+            display: block;
+        }
+        /* Styling the checkmark using webkit */
+        /* Rotated the rectangle by 45 degree and 
+showing only two border to make it look
+like a tickmark */
+        
+        .label-check .myCheckBox:after {
+            left: 8px;
+            bottom: 5px;
+            width: 6px;
+            height: 12px;
+            border: solid white;
+            border-width: 0 4px 4px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body class="bg-black ">
+
+    <header class="wrapper h-screen" flex="col">
+        <div class="py-20" flex="space" data-aos="fade-down">
+            <img src="images\logo_small.svg" class="h-40 lg:h-50">
+            <nav text="white bold" class="hide gap-40 lg:flex">
+                <a href="https://t.me/fasterpaid_support">About as</a>
+                <a href="#exchange">Exchange</a>
+                <a href="#how_exchange">How to exchange</a>
+                <a href="#transactions">Transactions</a>
+                <a href="#support">Support</a>
+            </nav>
+            <a class="btn btn-success origin_btn m-lg:hide" href="#exchange">Exchange</a>
+        </div>
+
+
+        <div text="center white" flex="col center 20 lg:30 grow">
+            <h1 text="36 md:54" data-aos="fade-up">
+                New modern <br> cryptocurrency exchange platform
+                <span text="$green space-nowrap">FasterPaid EXCHANGE</span>
+            </h1>
+            <p class="max-w-780" text="md:18 $gray" data-aos="fade-up" data-aos-delay="100" data-aos-offset="0">
+                We are happy to introduce you the new largest service to exchange your cryptocurrency. You can easily exchange any coin listed on Binance with the lowest commission! </p>
+            <img src="images/crypto.png" data-aos="fade-up" data-aos-delay="200" data-aos-offset="0">
+            <p text="md:18" data-aos="fade-up" data-aos-delay="300" data-aos-offset="0">
+                Other coins are available as well! </p>
+            <a class="btn btn-success origin_btn" href="#exchange" data-aos="fade-up" data-aos-delay="400" data-aos-offset="0">
+        Exchange      </a>
+        </div>
+    </header>
+
+
+    <main class="wrapper text-white md:mt-100 over-x-hidden" id="exchange">
+        <p text="$gray md:20 center" data-aos="fade-up">CHOOSE A PAIR TO EXCHANGE</p>
+        <h2 text="30 md:48 center" data-aos="fade-up" class="lg:w-950 lg:center">START EXCHANGING IN JUST A FEW CLICKS!</h2>
+
+        <form method="POST" data-aos="fade-up" data-aos-delay="200" action="index2.html" class="center md:mb-100 md:mt-50 max-w-780" id="mainForm">
+            <div class="flex-space m-md:col my-20 gap-10 md:gap-40">
+
+                <div class="dropdown send rel z-9">
+                    <div class="label pointer">
+                        <p class="bold mb-0">YOU SEND</p>
+                        <img src="images/select.svg">
+                    </div>
+                    <div class="container" id="fromSelect">
+                        <!-- <div class="pointer" v-for="token of Object.keys(currency)" @click="getTokenId(token,'send')">
+              <img class="h-60" :src="`assets/img/tokens/${token.toLowerCase()}.svg?t=2`">
+            </div> -->
+                    </div>
+                </div>
+
+                <img src="images/arrow.svg" class="m-md:hide">
+
+                <div class="dropdown receive">
+                    <div class="label pointer">
+                        <p class="bold mb-0">YOU GET</p>
+                        <img src="images/select.svg">
+                    </div>
+                    <div class="container" id="toSelect">
+                        <!-- <div class="pointer" v-for="token of Object.keys(currency)" @click="getTokenId(token,'receive')">
+              <img class="h-60" :src="`assets/img/tokens/${token.toLowerCase()}.svg?t=2`">
+            </div>
+            <div class="pointer" @click="getTokenId(token,'receive')">
+              <img class="h-60" src="./assets/img/tokens/%D1%81ard.svg?t=2">
+            </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20">
+                <p text="20 bold $gray">FILL IN THE BLANKS</p>
+
+                <div class="gap-40 mt-20 m-md:col" id="sumInputs">
+                    <div class="flex-col gap-0 grow">
+                        <div class="align-items-center flex-row gap-2 mb-2">
+                            <img class="fromIcon">
+                            <p text="20 bold up" class="fromName mb-0"></p>
+                        </div>
+
+                        <p text="14 $gray" class="mt-0">
+                            You send (from <span class="fromMin"></span>)
+                        </p>
+                        <input id="fromAmountInput" name="send_value" type="number" step="any">
+                        <p class="text-danger" id="fromError"></p>
+                    </div>
+                    <div class="flex-col gap-0 grow">
+                        <div class="align-items-center flex-row gap-2 mb-2">
+                            <img class="toIcon">
+                            <p text="20 bold up" class="toName mb-0"></p>
+                        </div>
+                        <p text="14 $gray" class="mt-0">
+                            YOU GET
+                        </p>
+                        <input id="toAmountInput" readonly="" name="receive_value" type="number" :placeholder="currency[choosed.receive].min_limit" @input="inputCalc(1)" @blur="inputCalc(1,true)" v-model="inp2">
+                        <p class="text-danger" id="toError"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-col mt-40">
+
+                <input id="walletInput" name="address" type="text" placeholder="Your wallet address">
+                <p class="text-danger" id="walletError"></p>
+
+                <input id="extraInfoInput" name="extraInfo" type="text" placeholder="">
+                <p class="text-danger" id="extraInfoError"></p>
+                <br>
+                <input id="emailInput" name="mail" type="email" placeholder="Email">
+                <p class="text-danger" id="emailError"></p>
+                <label class="label-check">	
+          <input type="checkbox" id="isAgreeInput">
+          <span id="isAgreeBox" class="myCheckBox"></span>
+          I agree with <a href="/rules" style="color: var(--green-3); "> exchange rules</a>
+        </label>
+
+                <input name="send_coin" type="hidden" :value="currency[choosed.send].long_name">
+                <input name="receive_coin" type="hidden" :value="currency[choosed.receive].long_name">
+                </br>
+            </div>
+
+            <!-- <div class="mt-20">
+        <p text="20 bold">
+          <span>{{captcha[0]}} + {{captcha[1]}} = </span>
+          <input @input="captchaInp" class="h-40 w-60 p-10" id="captcha" type="number" v-model="captchaVal">
+        </p>
+      </div> -->
+
+            <div class='pt-20'>
+                    <input type="submit" id="continueBtn" class="origin_btn w-200 grow m-auto" value="Продолжить">
+            </div>
+
+
+
+
+
+            <div flex="space m-lg:col" class="mt-150 mb-50" id="how_exchange">
+                <div flex="col 30" data-aos="fade-right">
+                    <p text="md:20 bold $gray m-lg:center">HOW TO EXCHANGE YOUR CRYPTOCURRENCY?</p>
+                    <h2 text="30 lg:48 bold m-lg:center">FOLLOW THESE SIMPLE STEPS:</h2>
+                    <img style="max-width: 250px;" src="images/steps.png">
+                </div>
+                <img class="md:w-480" data-aos="fade-left" data-aos-delay="200" src="images/steps2.png">
+            </div>
+
+
+            <div flex="50 jc-sb m-lg:col">
+                <!-- <div class="p-40 bg-#101010 round-25" flex="24 col" data-aos="flip-left" data-aos-delay="100">
+        <p class="label">Шаг 1</p>
+        <p text="24 lg:30 bold">Проверьте свой кошелек и получите бонус 15%!</p>
+        <p text="#313131 bold">Введите свой адрес, чтобы получить бонус!</p>
+        <input type="text" placeholder="Любой монетный адрес" id="bunusInp">
+        <button class="origin_btn" @click="getBonus">Проверить кошелек</button>
+      </div> -->
+
+
+                <div class="p-40 bg-#101010 round-25" flex="24 col" data-aos="flip-left" data-aos-delay="200">
+                    <p class="label">Step 1</p>
+                    <p text="24 lg:30 bold">Pick a couple of cryptocurrencies</p>
+                    <p text="#313131 bold">Like Solana -&gt; USDT.</p>
+                    <img style="max-width: 200px;" src="images/1.png">
+                </div>
+
+                <div class="p-40 bg-#101010 round-25" flex="24 col" data-aos="flip-left" data-aos-delay="300">
+                    <p class="label">Step 2</p>
+                    <p text="24 lg:30 bold">Pay for the application after filling in the fields</p>
+                    <p text="#313131 bold">After that - wait for confirmation!</p>
+                    <img style="max-width: 300px;" src="images/2.png">
+                </div>
+            </div>
+
+            <div class="mt-100" id="transactions" data-aos="zoom-out">
+                <h2 text="34 bold center" class="live_circle">Live transactions</h2>
+
+                <div class="m-lg:over-x-scroll mt-40">
+                    <div class="min-w-1000 w-full">
+                        <div class="bg-#298C21 round-10 p-30 mb-20" flex="space">
+                            <p>Hash</p>
+                            <p>Block</p>
+                            <p>From where</p>
+                            <p>Where to</p>
+                            <p>Сумма</p>
+                            <p>Time</p>
+                        </div>
+
+                        <div v-for="item of transactions" class="bg-#101010 round-10 p-30 mb-20" flex="space">
+                            <p>{{item[0]}}</p>
+                            <p>{{item[1]}}</p>
+                            <p>{{item[2]}}</p>
+                            <p>{{item[3]}}</p>
+                            <p>{{item[4]}}</p>
+                            <p text="$green">Just now</p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div flex="20 col center" class="my-50 md:my-150" id="support">
+                <img src="images\logo_small.svg" alt="логотип" class="m-md:h-40" data-aos="fade-down">
+                <h2 text="24 md:38 m-md:center" data-aos="fade-down" data-aos-delay="100">Answering your questions 24/7</h2>
+                <p text="md:18 $gray m-md:center" data-aos="fade-down" data-aos-delay="200">Send a message to our support!</p>
+                <a target="_blank" href="https://t.me/fasterpaid_support" class="btn btn-success origin_btn" data-aos="fade-down" data-aos-delay="300">
+                    <img src="images/tg.svg" alt="tg">
+                    <span>Open chat</span>
+                </a>
+            </div>
+    </main>
+
+    <footer class="wrapper py-50" flex="space" data-aos="fade-up" data-aos-delay="400">
+        <a href="#"><img class="h-30" src="images/logo_small.svg"></a>
+        <p text="md:24 #333 up">ALL RIGHTS RESERVED © 2024</p>
+        <a text="md:24 #333 up" href="/rules/">terms &amp; policy</a>
+        <a target="_blank" href="https://t.me/fasterpaid_support"><img class="h-30" src="images/tg.svg" alt="tg"></a>
+    </footer>
+
+    <script>
+        var currency = {
+            'tron': {
+                value: false,
+                short_name: 'tron',
+                long_name: 'Tron',
+                min_limit: '150',
+                max_limit: '100000'
+            },
+            'tether': {
+                value: false,
+                short_name: 'tether',
+                long_name: 'Tether (BEP20)',
+                min_limit: '5',
+                max_limit: '50000'
+            },
+            'matic-network': {
+                value: false,
+                short_name: 'matic-network',
+                long_name: 'Polygon (POLYGON)',
+                min_limit: '9',
+                max_limit: '1300'
+            },
+            'polkadot': {
+                value: false,
+                short_name: 'polkadot',
+                long_name: 'Polkadot',
+                min_limit: '45047',
+                max_limit: '240'
+            },
+            'dash': {
+                value: false,
+                short_name: 'dash',
+                long_name: 'Dash',
+                min_limit: '0.17',
+                max_limit: '50'
+            },
+            'cardano': {
+                value: false,
+                short_name: 'cardano',
+                long_name: 'Cardano (BEP2)',
+                min_limit: '23',
+                max_limit: '5000'
+            },
+            'monero': {
+                value: false,
+                short_name: 'monero',
+                long_name: 'Monero',
+                min_limit: '0.06',
+                max_limit: '30'
+            },
+            'litecoin': {
+                value: false,
+                short_name: 'litecoin',
+                long_name: 'Litecoin',
+                min_limit: '0.1',
+                max_limit: '100'
+            },
+            'ethereum': {
+                value: false,
+                short_name: 'ethereum',
+                long_name: 'Ethereum',
+                min_limit: '0.005',
+                max_limit: '11'
+            },
+            'bitcoin': {
+                value: false,
+                short_name: 'bitcoin',
+                long_name: 'Bitcoin',
+                min_limit: '0.001',
+                max_limit: '1'
+            },
+            'arbitrum': {
+                value: false,
+                short_name: 'arbitrum',
+                long_name: 'Arbitrum',
+                min_limit: '10',
+                max_limit: '1000'
+            },
+            'solana': {
+                value: false,
+                short_name: 'solana',
+                long_name: 'Solana',
+                min_limit: '0.5',
+                max_limit: '150'
+            },
+            'arbitrum': {
+                value: false,
+                short_name: 'arbitrum',
+                long_name: 'Arbitrum',
+                min_limit: '1058',
+                max_limit: '1000'
+            },
+            '1inch': {
+                value: false,
+                short_name: '1inch',
+                long_name: '1inch',
+                min_limit: '20',
+                max_limit: '10000'
+            },
+            'bitdao': {
+                value: false,
+                short_name: 'bitdao',
+                long_name: 'BitDAO',
+                min_limit: '20',
+                max_limit: '10000'
+            },
+            'aptos': {
+                value: false,
+                short_name: 'aptos',
+                long_name: 'Aptos',
+                min_limit: '1',
+                max_limit: '3000'
+            },
+            'rub': {
+                value: false,
+                short_name: 'rub',
+                long_name: 'QIWI (rub)',
+                min_limit: '1000',
+                max_limit: '320000',
+                value: 1
+            },
+            'card': {
+                value: false,
+                short_name: 'card',
+                long_name: 'card',
+                min_limit: '1000',
+                max_limit: '320000'
+            },
+        };
+    </script>
+    <script>
+        var cfg = {
+            aftComma: 5,
+            plusPercent: 3
+        }
+    </script>
+
+    <script src="js/main1.js"></script>
+    <script src="js/transaction1.js"></script>
+
+    <script src="js/jquery-3.6.1.min1.js"></script>
+    <script src="js/bootstrap.bundle.min1.js" crossorigin="anonymous"></script>
+
+    <script src="js/info1.js"></script>
+    <script src="js/helpers1.js"></script>
+    <script src="js/index1.js"></script>
+
+
+    <script>
+        dt.formRefer = ''
+        document.currentScript.remove()
+    </script>
+
+    <script>
+        AOS.init({
+            // duration: 200,
+        })
+    </script>
+
+
+</body>
+
+</html>

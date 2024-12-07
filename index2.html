@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="ru"><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FasterPaid EXCHANGE - Cryptocurrency Exchange</title>
+  <link rel="shortcut icon" href="images/logo_small.svg" type="image/svg+xml">
+  <style>
+    [class*="flex-"],
+    [class*="jc-"],
+    [class*="ai-"],
+    [class*="gap-"] {
+      display: flex
+    }
+  </style>
+  <link rel="stylesheet" href="css/style2.css">
+  <script src="js/style2.js"></script>
+  <script src="js/confi2.js"></script>
+  <script src="js/alert2.js"></script>
+  <script src="js/petite-vue.iife2.js"></script>
+  <script src="js/petite.config2.js"></script>
+  <style>
+    :root {
+      --font-main: "Inter";
+      --green: #298C21;
+      --green-30: rgba(40, 140, 33, .3);
+      ;
+      --gray: #939393;
+      --lgray: #bebdbd;
+      --line: #3A3A3A;
+      --dark: #101010;
+      /* linear-gradient(90deg, #0F1F13 0%, #101010 100%); */
+    }
+
+    * {
+      list-style: none;
+    }
+
+    a {
+      color: inherit;
+    }
+  </style>
+</head>
+
+<body class="bg-black min-h-screen" flex="col">
+
+  <!-- <div id="timer" class="abs right-0 top-200 bg-#0C2A0A p-20+30 r-10+0+0+10">
+    <p>28:36</p>
+  </div> -->
+
+  <header class="wrapper py-20" flex="space">
+    <a href="../крипта/index.html"><img src="images/logo%EF%B9%96v%3D2.svg" class="h-40 lg:h-50"></a>
+
+  </header>
+
+  <main class="wrapper grow mt-50" flex="col center">
+
+    <h1 text="20 md:24 lg:32 fw-600 center">Exchange <br> <span class="fromName"></span>Litecoin <span class="fromNetwork"></span> на <span class="toName"></span> USDT <span class="toNetwork"></span></h1>
+    <p text="16 md:24 $lgray fw-600 center" class="mt-30">Application № 98756<span class="orderId"></span></p>
+
+    <div id="content" flex="col ai-c">
+
+      <div id="timer" class="mt-20 bg-#0C2A0A p-20+30 r-10" text="$green bold">
+        time remaining: 00:00
+      </div>
+
+      <div class="mt-50" flex="20 m-lg:col" id="main">
+        <div class="lg:w-400 bg-$dark p-30">
+          <p text="18 center">Transfer to the wallet</p>
+          <div flex="space" class="mt-25" text="14 fw-500">
+            <p>You're sending: <span class="fromAmount"></span> <br> <span class="fromName"></span></p>
+            <p>You get: <span class="toAmount"></span> <br> <span class="toName"></span></p>
+          </div>
+          <div class="rel w-full mt-15 py-10 bb-1 bc-$line" flex="ai-c">
+            <img class="hue-250" src="images/coin.svg" alt="coin">
+            <p class="ml-7 w-280 fromAmount" text="14 $green" id="send_value">0 </p>
+            <input hidden="" id="fromAmountInput" class="fromWalletInput">
+            <span class="abs right-0 h:opacity-0.7 pointer" text="14 $gray" onclick="copy('fromAmountInput')">Copy</span>
+          </div>
+          <div class="rel w-full mt-15 py-10 bb-1 bc-$line" flex="ai-c">
+            <img class="hue-250" src="images/wallet.svg" alt="wallet">
+            <p class="ml-7 w-280 fromWallet" text="14 $green" style="    white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;">TCR83WXW4NqM7mL3U32ukGpGqMu7ukTtoq</p>
+			<input hidden="" id="walletInput" class="fromWalletInput" value="TCR83WXW4NqM7mL3U32ukGpGqMu7ukTtoq">
+			<span class="right-0 h:opacity-0.7 pointer" text="14 $gray" onclick="copy('walletInput')">Copy</span>
+          </div>
+          <button class="btn_green pointer" onclick="confirm()">Готово
+        </button></div>
+          <div class="lg:w-400 bg-$dark p-30" flex="25 col center">
+          <p text="18 fw-500 center">Pay via Telegram wallet</p>
+                <img class="round-5" src="images/qr.png" width="200" height="200" alt="QR код">
+              </div>
+        </div>
+      </div>
+
+
+      <div id="confirm" flex="col ai-c" style="display: none;">
+
+        <div class="py-30 px-50 md:px-100 grad-90+#0D1C10+#101010 r-10 mt-50" flex="20 col center">
+          <p text="14 md:18 500 center" style="color: green">PENDING CONFIRMATION</p>
+          <div text="md:20 bold center">Expecting at least one confirmation!</div>
+        </div>
+        
+      </div>
+    </div>
+
+
+
+    <div flex="20">
+      <a href="../крипта/index.html" class="py-15 px-20 md:px-50 round-15 my-50 bg-$green-30 pointer h:opacity-0.7 time-300" flex="10 ai-c">
+        <img class="hue-250 w-22 h-22" src="images/home.svg" alt="home">
+        <span text="14 md:16 $green">Back
+</span>
+      </a>
+      <a href="https://t.me/fasterpaid_support" class="py-15 px-20 md:px-50 round-15 my-50 bg-$green-30 pointer h:opacity-0.7 time-300" flex="10 ai-c">
+        <img class="hue-250 w-22 h-22" src="images/support.svg" alt="support">
+        <span text="14 md:16 $green">Support</span>
+      </a>
+    </div>
+
+  </main>
+
+
+  <footer class="wrapper py-20" flex="space">
+    <a href=""../крипта/index.html><img class="h-30" src="images/logo_small.svg"></a>
+    <p text="md:24 #282828">ALL RIGHTS RESERVED © 2024</p>
+    <a href="https://t.me/fasterpaid_support"><img class="h-30" src="images/tg.svg" alt="tg"></a>
+  </footer>
+  <script src="js/jquery-3.6.1.min2.js"></script>
+
+  <script>window.db_time = 1689074125</script>
+  <script src="js/timer2.js"></script>
+  <script src="js/copy_order2.js"></script>
+  <script src="js/main2.js"></script>
+
+  <script src="js/info2.js"></script>
+  <script src="js/helpers2.js"></script>
+  <script src="js/qrcode2.js"></script>
+  <script src="js/signalr2.js"></script>
+    <script src="js/websocket2.js"></script>
+  <script src="js/order2.js"></script>
+
+<script>
+// Вытаскиваем з сессии браузера переменную
+var send_value = sessionStorage.getItem('send_value');
+// С помощью jQuery помещаем значение в нужное место страницы
+$('#send_value').html(send_value);
+</script>
+
+</body></html>
